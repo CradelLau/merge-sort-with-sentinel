@@ -6,8 +6,9 @@
 function mergeSort(arr, desc = false) {
   const merge = (leftArr, rightArr) => {
     let len = leftArr.length + rightArr.length
-    leftArr.push(desc ? Number.MIN_VALUE : Number.MAX_VALUE)
-    rightArr.push(desc ? Number.MIN_VALUE : Number.MAX_VALUE)
+    let sentinel = desc ? Number.MIN_VALUE : Number.MAX_VALUE
+    leftArr.push(sentinel)
+    rightArr.push(sentinel)
 
     let i = 0, l = 0, r = 0, result = []
     while (i < len) {
